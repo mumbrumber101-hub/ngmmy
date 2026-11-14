@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lafferty · A Universe of Worlds</title><meta name="description" content="An interactive three-dimensional reading map of R. A. Lafferty’s fictional worlds."><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lafferty · A Universe of Worlds</title><meta name="description" content="An interactive three-dimensional reading map of R. A. Lafferty’s fictional worlds."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Poppins:wght@400;500&amp;display=swap" rel="stylesheet"><style>
 :root{color-scheme:dark;--sky:#0c141d;--panel:#14212c;--ink:#ede9de;--muted:#b7c2c9;--line:#344451;--accent:#eac68a;--focus:#9dd8f4}*{box-sizing:border-box}body{margin:0;background:var(--sky);color:var(--ink);font:17px/1.5 Georgia,'Times New Roman',serif}button,input,select{font:14px/1.3 system-ui,sans-serif}button,a,summary,input,select{-webkit-tap-highlight-color:transparent}button,select,input{color:var(--ink);background:var(--panel);border:1px solid #526371;border-radius:3px;min-height:44px}button{cursor:pointer;padding:.55rem .8rem}button:hover{background:#253746}button[aria-pressed=true]{color:var(--sky);background:var(--accent);border-color:var(--accent)}a{color:var(--accent);text-underline-offset:.2em}:focus-visible{outline:3px solid var(--focus);outline-offset:3px}button:disabled{opacity:.45;cursor:default}[hidden]{display:none!important}.skip{position:absolute;top:-100px;z-index:9;background:var(--panel);padding:.7rem}.skip:focus{top:.6rem}header{padding:1.6rem 2rem 1.15rem;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:2rem}.kicker,.caption,.tag,.hint,.counts,.toolbar,.legend,.status,footer,label,.relation-label{font-family:system-ui,sans-serif}.kicker{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 .35rem}h1{font-weight:400;font-size:clamp(1.8rem,3.7vw,3rem);letter-spacing:-.03em;line-height:1.1;margin:0}.subtitle{color:var(--muted);font-size:1rem;margin:.55rem 0 0}.caption{font-size:.74rem;max-width:19rem;color:var(--muted);margin:0}.toolbar{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;padding:.8rem 2rem;border-bottom:1px solid var(--line)}.toolbar label{font-size:.75rem;display:flex;align-items:center;gap:.5rem}.toolbar select{padding:.45rem .6rem;max-width:240px}.toolbar .view-switch{display:flex;gap:.35rem;margin-left:auto}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:650px;height:calc(100dvh - 225px)}.map-area{position:relative;min-width:0;overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#192635 0%,#0c141d 70%)}canvas{display:block;width:100%;height:100%;outline-offset:-4px!important;touch-action:none;cursor:grab}canvas:active{cursor:grabbing}.scene-note{position:absolute;top:1.1rem;left:1.4rem;margin:0;color:#c8d0d4;font-size:.72rem;font-family:system-ui,sans-serif;pointer-events:none}.scene-controls{position:absolute;bottom:3.7rem;left:1.2rem;display:flex;gap:.35rem;flex-wrap:wrap;max-width:calc(100% - 2.4rem)}.scene-controls button{background:#14212ce8;min-width:44px}.legend{position:absolute;bottom:1rem;left:1.4rem;display:flex;gap:1rem;font-size:.68rem;color:var(--muted);pointer-events:none}.legend span{display:flex;align-items:center;gap:.4rem}.swatch{width:7px;height:7px;border-radius:50%;background:#eac68a}.swatch.world{background:#9bbdce}.swatch.moon{background:#c7d1d3}.panel{background:var(--panel);border-left:1px solid var(--line);overflow:auto;padding:1.4rem 1.45rem 2rem;scrollbar-width:thin;scrollbar-color:#526371 transparent}.panel h2{font-size:1.8rem;font-weight:400;line-height:1.15;margin:.55rem 0 .6rem}.panel .description{font-size:1rem;margin:.8rem 0 1.3rem}.panel .tag{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}.panel .alias{color:var(--muted);font-style:italic;font-size:.95rem}.panel h3{font-size:1.1rem;font-weight:400;margin:1.5rem 0 .8rem}.panel figure{margin:0 0 1.4rem;padding-left:.8rem;border-left:2px solid #516372}.panel blockquote{font-size:1rem;margin:0 0 .5rem}.panel figcaption{font-size:.84rem;color:var(--muted)}.panel figcaption p{margin:.35rem 0}.panel details{margin:.8rem 0;border-top:1px solid var(--line);padding:.6rem 0}.panel summary{cursor:pointer;padding:.4rem 0;min-height:44px;font-size:.95rem}.panel .panel-link{font-size:.75rem}.panel-actions{display:flex;gap:.5rem;flex-wrap:wrap}.relation{margin-bottom:1rem}.relation-label{font-size:.7rem;color:var(--muted);margin:.3rem 0 .55rem}.relation button{font-size:.75rem;margin-bottom:.55rem;text-align:left}.browser{position:absolute;top:0;left:0;bottom:0;width:265px;background:#111d27f5;border-right:1px solid var(--line);padding:1rem;overflow:auto;z-index:2}.browser label{display:block;font-size:.75rem;margin-bottom:.4rem}.browser input{width:100%;padding:.6rem;font-size:16px;margin-bottom:.8rem}.browser .close{float:right;margin:-.45rem 0 .4rem .3rem}.browser ul{list-style:none;margin:0;padding:0}.browser li button{width:100%;display:block;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;font-family:Georgia,serif;font-size:1rem}.browser li button[aria-current=true]{background:#263a47;color:var(--accent)}.browser .counts{font-size:.7rem;color:var(--muted)}.list-view{height:100%;overflow:auto;padding:1.4rem 2rem}.list-view h2{font-weight:400;margin:0 0 1rem}.list-view .list-row{display:block;width:100%;text-align:left;margin:.5rem 0;padding:1rem;font-family:Georgia,serif;font-size:1.2rem}.list-row small{display:block;font:12px system-ui,sans-serif;color:var(--muted);margin-top:.35rem}.status{padding:.65rem 2rem;color:var(--muted);font-size:.7rem;border-top:1px solid var(--line)}footer{padding:.7rem 2rem 1.2rem;display:flex;justify-content:space-between;gap:1rem;color:var(--muted);font-size:.68rem}.help{max-width:65ch;margin:2rem auto;padding:1.5rem;line-height:1.6}.help p{margin:.6rem 0}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.hint{font-size:.75rem;color:var(--muted)}
 @media(min-width:1550px){.workspace{grid-template-columns:minmax(0,1fr) 420px}.panel{padding:2rem}.panel .description,.panel blockquote{font-size:1.08rem}}
 @media(max-width:1000px){.workspace{grid-template-columns:minmax(0,1fr) 310px}.panel{padding:1.1rem}.caption{max-width:15rem}.scene-controls{gap:.25rem}.scene-controls button{padding:.45rem}.toolbar{padding:.65rem 1rem}}
@@ -23,7 +23,7 @@ h1{font-size:clamp(1.65rem,3vw,2.4rem)}
 .toolbar>label{min-width:0}
 .map-options{display:contents}
 .options-toggle{display:none}
-.workspace{position:relative;flex:1;min-height:0;height:auto;grid-template-columns:minmax(0,1fr) clamp(285px,28vw,390px);grid-template-rows:minmax(0,1fr)}
+.workspace{position:relative;flex:1;min-height:0;height:auto;grid-template-columns:minmax(0,1fr) clamp(280px,30.6vw,340px);grid-template-rows:minmax(0,1fr)}
 .map-area,.panel{min-height:0;min-width:0}
 .panel{overscroll-behavior:contain;overflow-wrap:anywhere}
 .panel .description,.panel blockquote{line-height:1.6}
@@ -39,6 +39,8 @@ h1{font-size:clamp(1.65rem,3vw,2.4rem)}
 .atlas-bar .window-link{font-size:12px}
 @media(max-width:1100px){.header-tools .caption{display:none}}
 @media(max-width:860px){
+ html{height:auto;overflow-x:clip;overflow-y:auto}
+ body{display:block;height:auto;min-height:0;overflow:visible}
  body>header{display:flex;align-items:center;padding:.65rem .8rem;gap:.75rem}
  header>div:first-child{min-width:0}
  h1{font-size:clamp(1.35rem,4.8vw,1.8rem)}
@@ -59,16 +61,15 @@ h1{font-size:clamp(1.65rem,3vw,2.4rem)}
  .map-options[data-open=true]{display:flex;flex-wrap:wrap}
  .map-options label{width:100%;display:flex;font-size:.8rem;gap:.5rem}
  .map-options button{flex:1}
- .workspace{display:block;flex:1;min-height:0}
- .map-area{height:100%;min-height:0;max-height:none}
+ .workspace{display:flex;flex-direction:column;flex:none;min-height:0;height:auto}
+ .map-area{order:0;flex:none;height:clamp(400px,110vw,440px);min-height:0;max-height:none}
  .scene-note{top:.7rem;left:.8rem;right:.8rem;font-size:.65rem}
  .scene-controls{left:.65rem;right:.65rem;bottom:2.6rem;gap:4px;max-width:none}
  .scene-controls button{padding:.35rem;min-width:44px;min-height:44px;font-size:13px}
  #read-selection{flex-basis:100%;width:max-content;flex-grow:0;text-align:left;padding-left:.65rem}
  .legend{left:.8rem;bottom:.65rem;gap:.65rem;font-size:.62rem;flex-wrap:wrap}
- .panel{display:none;position:fixed;inset:0;z-index:6;border:0;padding:4.8rem 1.15rem 1.5rem;overflow:auto;scroll-padding-top:4.8rem}
- .reading-open .panel{display:block}
- .reading-open .reading-header{display:flex;align-items:center;gap:.8rem;position:fixed;top:0;left:0;right:0;z-index:7;padding:.65rem 1rem;background:var(--panel);border-bottom:1px solid var(--line);font:12px system-ui,sans-serif;color:var(--muted)}
+ .panel{order:2;flex:none;display:block;position:static;inset:auto;z-index:auto;border:0;padding:.3rem 1.15rem 1.5rem;overflow:visible;scroll-padding-top:0}
+ .reading-header{order:1;flex:none;display:flex;align-items:center;gap:.8rem;position:static;padding:.75rem 1.15rem;background:var(--panel);border-top:1px solid var(--line);font:12px system-ui,sans-serif;color:var(--muted)}
  .reading-back{display:block}
  .status{font-size:.65rem;padding:.4rem .8rem}
  .atlas-bar{gap:.5rem;padding:.4rem .6rem}
@@ -100,15 +101,71 @@ h1{font-size:clamp(1.65rem,3vw,2.4rem)}
  .panel,.reading-open .panel{display:block;position:static;padding:0;overflow:visible}
  .reading-header,.help,.window-link{display:none!important}
 }
-</style></head><body><a class="skip" href="#reading-panel">Skip to selected place</a><header><div><p class="kicker">R. A. Lafferty</p><h1>A Universe of Worlds</h1><p class="subtitle" id="scene-subtitle">Sol and the Centauri suns</p></div><div class="header-tools"><p class="caption" id="scene-caption">The seventeen worlds of Butler’s catalogue in “World Abounding,” with their moons.</p><div class="header-actions"><button id="open-atlas" aria-haspopup="dialog" aria-controls="atlas-dialog">Atlas</button><a class="window-link" id="open-window" href="https://mumbrumber101-hub.github.io/ngmmy/" target="_blank" rel="noopener" aria-label="Open map in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div></div></header>
+</style><style id="editorial-shell">
+/* Shared paper surface; the map retains its own dark palette. */
+:root{color-scheme:light;--paper:#F8F8F4;--text:#20261F;--quiet:#565E55;--rule:#D9DDD5;--control-line:#879180;--link:#356269;--serif:"EB Garamond",Georgia,serif;--sans:Poppins,Arial,sans-serif;--panel:var(--paper);--ink:var(--text);--muted:var(--quiet);--line:var(--rule);--accent:var(--link);--focus:var(--link)}
+body{background:var(--paper);font-family:var(--sans)}
+h1,h2,h3,.panel blockquote{font-family:var(--serif)}
+button,input,select,.kicker,.caption,.tag,.hint,.counts,.toolbar,.legend,.status,footer,label,.relation-label,.window-link,.reading-header{font-family:var(--sans)}
+button,input,select,.window-link{background:var(--paper);color:var(--text);border-color:var(--control-line)}
+.toolbar button{font-size:14px}
+button:hover,.window-link:hover{background:#EAF0EA}
+button[aria-pressed=true]{background:var(--link);color:var(--paper);border-color:var(--link)}
+.header-tools button{color:var(--link);border-color:var(--control-line)}
+.subtitle{font-family:var(--serif);font-size:1.1rem}
+.panel{padding:1.25rem;font-size:16px}
+.panel h2{font-size:1.9rem;line-height:1.1}
+.panel h3{font-size:1.35rem}
+.panel .description{font-size:16px;line-height:1.65}
+.panel .alias{font-family:var(--serif);font-size:1.1rem}
+.panel figure{border-left-color:var(--link)}
+.panel blockquote{font-size:19px;line-height:1.45}
+.panel figcaption{font-family:var(--sans);font-size:12px;line-height:1.55}
+.panel .panel-link,.relation button{font-size:13px}
+.panel summary{font-size:14px}
+.panel .hint{font-size:12px}
+.map-area{color-scheme:dark;color:#ede9de;--panel:#14212c;--ink:#ede9de;--muted:#b7c2c9;--line:#344451;--accent:#eac68a;--focus:#9dd8f4}
+.browser,.list-view{color-scheme:light;--panel:var(--paper);--ink:var(--text);--muted:var(--quiet);--line:var(--rule);--accent:var(--link);--focus:var(--link);color:var(--text)}
+.scene-controls button{background:#14212ce8;color:#ede9de;border-color:#627580}
+.scene-controls button:hover{background:#253746}
+.browser,.list-view{background:var(--paper)}
+.browser li button,.list-view .list-row{font-family:var(--serif)}
+.browser li button[aria-current=true]{background:#EAF0EA;color:var(--link)}
+.list-row small{font-family:var(--sans)}
+.help,.map-options{border-color:var(--rule);box-shadow:0 8px 28px #20261F24}
+.atlas-dialog,.atlas-bar{background:var(--paper)}
+.atlas-bar h2{font-family:var(--serif)}
+body.embedded>header{padding:.7rem 1.1rem;gap:1rem}
+body.embedded>header .kicker,body.embedded>header h1{display:none}
+body.embedded #scene-subtitle{display:block;margin:0;color:var(--text);font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.15}
+body.embedded .header-tools .caption{display:none}
+body.embedded .header-actions{flex-direction:row;align-items:center;gap:.5rem}
+body.embedded .header-actions button{min-width:64px}
+body.embedded .header-actions .window-link{font-size:12px}
+@media(max-width:860px){
+ .atlas-dialog{height:min(800px,100dvh);bottom:auto}
+ .panel{padding:.3rem 1.15rem 1.5rem;font-size:16px}
+ .panel .description{font-size:16px;max-width:65ch}
+ .panel h2{font-size:2rem}
+ .panel blockquote{font-size:20px}
+ .reading-header{font-family:var(--sans)}
+ body.embedded>header{padding:.7rem .8rem;gap:.5rem}
+ body.embedded #scene-subtitle{font-size:1.35rem}
+ body.embedded .header-actions{gap:.2rem}
+ body.embedded .header-actions button{min-width:56px;padding:.45rem .6rem}
+ body.embedded .header-actions .window-link{font-size:11px;padding:.2rem;min-height:44px}
+}
+@media print{body{background:white;color:black}.panel{padding:0}.reading-header{display:none!important}}
+</style></head><body><script>if(self!==top)document.body.classList.add("embedded");</script><a class="skip" href="#reading-panel">Skip to selected place</a><header><div><p class="kicker">R. A. Lafferty</p><h1>A Universe of Worlds</h1><p class="subtitle" id="scene-subtitle">Sol and the Centauri suns</p></div><div class="header-tools"><p class="caption" id="scene-caption">The seventeen worlds of Butler’s catalogue in “World Abounding,” with their moons.</p><div class="header-actions"><button id="open-atlas" aria-haspopup="dialog" aria-controls="atlas-dialog">Atlas</button><a class="window-link" id="open-window" href="https://mumbrumber101-hub.github.io/ngmmy/" target="_blank" rel="noopener" aria-label="Open map in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div></div></header>
 <div class="toolbar" aria-label="Map controls"><label>Scene <select id="scene-select"></select></label><button id="browse" aria-expanded="false" aria-controls="browser">Find in this scene</button><div class="view-switch" role="group" aria-label="View"><button id="map-mode" aria-pressed="true">3D map</button><button id="list-mode" aria-pressed="false">List</button></div><button class="options-toggle" id="options-toggle" aria-expanded="false" aria-controls="map-options">Options</button><div class="map-options" id="map-options"><label id="region-label">Region <select id="region"><option value="all">Whole scene</option><option value="sol">Sol</option><option value="proxima">Proxima</option><option value="alpha">Alpha</option><option value="beta">Beta</option></select></label><button id="reset">Reset view</button><button id="help-toggle" aria-expanded="false" aria-controls="help">How to explore</button></div></div>
 <section class="help" id="help" hidden aria-label="How to explore"><button class="help-close" id="close-help">Close help</button><p>Drag to turn the scene. Pinch or use the zoom buttons to move closer. Select a world or a connecting line to read its sources. Use Find in this scene or List to choose an entry by name.</p><p>Keyboard: focus the map, then use the arrow keys to turn, + or − to zoom, Home to reset, and [ or ] to move between places. Enter opens the selected place in the reading panel.</p><p>The Scene menu offers five views: Butler’s catalogue, the island-planets of Selkirk, the voyage of Space Chantey, the enclosed worlds, and Aeaea’s shared underground. In the catalogue, lines join each world to its sun and each moon to its world. In the voyage, arrows follow the order of the narrative; the dashed arrow marks the return through reversed time, and the dotted arrow Roadstrum’s disputed report of a last leg by way of Mars. In the enclosed worlds, frames show the model in Barnaby’s study with its city, and the realm inside Toby’s bullet. Sizes and positions are schematic.</p></section>
-<main class="workspace"><div class="reading-header"><button class="reading-back" id="reading-back" aria-controls="reading-panel">← Back to map</button><span>Selected place</span></div><div class="map-area" id="map-area"><canvas id="scene" tabindex="0" role="img" aria-label="Rotatable schematic of Sol and the Centauri suns. Use Find in this scene or List for entries in this scene." aria-describedby="scene-instructions"></canvas><p class="scene-note" id="scene-instructions">Drag to turn. Select a place to read about it.</p><div class="scene-controls" id="scene-controls"><button data-turn="left" aria-label="Turn left">←</button><button data-turn="right" aria-label="Turn right">→</button><button data-turn="up" aria-label="Tilt up">↑</button><button data-turn="down" aria-label="Tilt down">↓</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="read-selection">Read selection</button></div><div class="legend" id="legend"><span><i class="swatch"></i>Sun</span><span><i class="swatch world"></i>Catalogue world</span><span><i class="swatch moon"></i>Moon or pair</span></div><div class="list-view" id="list-view" hidden></div><aside class="browser" id="browser" hidden aria-label="Find in this scene"><button class="close" id="close-browser" aria-label="Close place finder">×</button><label for="search">Find in this scene</label><input id="search" type="search" placeholder="Name or alias" autocomplete="off"><p class="counts" id="find-count"></p><button id="search-full-atlas">Search full atlas</button><ul id="place-list"></ul></aside></div><aside class="panel" id="reading-panel" tabindex="-1" aria-label="Selected place and sources"></aside></main>
+<main class="workspace"><div class="map-area" id="map-area"><canvas id="scene" tabindex="0" role="img" aria-label="Rotatable schematic of Sol and the Centauri suns. Use Find in this scene or List for entries in this scene." aria-describedby="scene-instructions"></canvas><p class="scene-note" id="scene-instructions">Drag to turn. Select a place to read about it.</p><div class="scene-controls" id="scene-controls"><button data-turn="left" aria-label="Turn left">←</button><button data-turn="right" aria-label="Turn right">→</button><button data-turn="up" aria-label="Tilt up">↑</button><button data-turn="down" aria-label="Tilt down">↓</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="read-selection">Read selection</button></div><div class="legend" id="legend"><span><i class="swatch"></i>Sun</span><span><i class="swatch world"></i>Catalogue world</span><span><i class="swatch moon"></i>Moon or pair</span></div><div class="list-view" id="list-view" hidden></div><aside class="browser" id="browser" hidden aria-label="Find in this scene"><button class="close" id="close-browser" aria-label="Close place finder">×</button><label for="search">Find in this scene</label><input id="search" type="search" placeholder="Name or alias" autocomplete="off"><p class="counts" id="find-count"></p><button id="search-full-atlas">Search full atlas</button><ul id="place-list"></ul></aside></div><div class="reading-header"><button class="reading-back" id="reading-back" aria-controls="reading-panel">← Back to map</button><span>Selected place</span></div><aside class="panel" id="reading-panel" tabindex="-1" aria-label="Selected place and sources"></aside></main>
 <div class="status" id="status" role="status" aria-live="polite"></div><dialog class="atlas-dialog" id="atlas-dialog" aria-label="Celestial Atlas"><div class="atlas-bar"><button id="close-atlas" autofocus>← Back to map</button><h2>Celestial Atlas</h2><a class="window-link" id="atlas-window" href="https://mumbrumber101-hub.github.io/ngmmy/atlas.html" target="_blank" rel="noopener" aria-label="Open atlas in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div><iframe class="atlas-frame" id="atlas-frame" title="Celestial Atlas of R. A. Lafferty" sandbox="allow-scripts"></iframe></dialog><noscript><p class="help">This map requires JavaScript.</p></noscript><script src="atlas-data.js?v=20261114b"></script>
 <script>
 
 
 const $=id=>document.getElementById(id);
+if(document.body.classList.contains('embedded')){$('scene-subtitle').setAttribute('role','heading');$('scene-subtitle').setAttribute('aria-level','2');}
 const entries=new Map(register.entities.map(x=>[x.id,x]));
 let activeScene=register.scenes[0];
 let nodes=activeScene.nodes;
@@ -252,7 +309,7 @@ function draw(){
 function panel(id){const x=entries.get(id);if(!x)return;chosen=id;let r=register.relationships.filter(e=>e.from===id||e.to===id);const sceneEdgeIds=new Set(activeScene.renderedRelations);r.sort((a,b)=>Number(sceneEdgeIds.has(b.id))-Number(sceneEdgeIds.has(a.id)));const condensed=id==='selkirk-system';if(condensed)r=r.slice(0,1);const p=$('reading-panel');
  const sourceKey=c=>c.story+'\n'+c.quote;const proofs=[...new Map(r.flatMap(e=>e.evidence).map(k=>register.evidence[k]).map(c=>[sourceKey(c),c])).values()];const seen=new Set(proofs.map(sourceKey));const other=x.citations.filter(c=>!seen.has(sourceKey(c)));
  p.innerHTML=`<div class="tag">${escapeHtml(x.typeLabel||typeNames[x.type]||x.type)}</div><h2>${escapeHtml(x.name)}</h2>${x.altName?`<p class="alias">${escapeHtml(x.altName)}</p>`:''}<div class="panel-actions">${nodeMap.has(id)?'<button id="focus-place">Centre here</button>':''}<a class="panel-link" href="#${encodeURIComponent(activeScene.id)}/${encodeURIComponent(id)}">Direct link</a><a class="panel-link" href="atlas.html#${encodeURIComponent(x.catalogueTarget||id)}">Full atlas entry</a></div><p class="description">${descriptionHtml(x.description,x.descriptionTitles)}</p><h3>Connections</h3>${condensed?'<p class="hint">Each island-planet has its own entry under Find in this scene and List.</p>':''}${r.map(e=>{const isFrom=e.from===id;const otherId=isFrom?e.to:e.from;return `<div class="relation"><p class="relation-label">${escapeHtml(entries.get(e.from).name)} · ${escapeHtml(relationNames[e.kind].toLowerCase())} · ${escapeHtml(entries.get(e.to).name)}</p><button data-entry="${escapeHtml(otherId)}">${escapeHtml(entries.get(otherId).name)}</button>${e.note?`<p class="hint">${escapeHtml(e.note)}</p>`:''}</div>`;}).join('')||'<p class="hint">No connections are mapped for this entry.</p>'}${proofs.length?'<h3>Source passages</h3>'+proofs.map(evidence).join(''):''}${other.length?`<details><summary>Further passages (${other.length})</summary>${other.map(evidence).join('')}</details>`:''}`;
- p.scrollTop=0;p.querySelectorAll('[data-entry]').forEach(b=>b.addEventListener('click',()=>select(b.dataset.entry)));const fb=$('focus-place');if(fb)fb.addEventListener('click',()=>center(id));$('status').textContent=x.name+' selected. Sources are in the reading panel.';updateFinder();requestDraw();
+ p.scrollTop=0;p.querySelectorAll('[data-entry]').forEach(b=>b.addEventListener('click',()=>{select(b.dataset.entry);if(matchMedia('(max-width:860px)').matches)showReading();}));const fb=$('focus-place');if(fb)fb.addEventListener('click',()=>center(id));$('status').textContent=x.name+' selected. Sources are in the reading panel.';updateFinder();requestDraw();
 }
 function select(id,hash=true){if(!entries.has(id))return;if(!nodeMap.has(id)){const next=register.scenes.find(sc=>sc.nodes.some(n=>n.id===id));if(next)switchScene(next.id,false);}const n=nodeMap.get(id);if(n&&region!=='all'&&n.group!==region){region=n.group;$('region').value=region;regionCamera();}panel(id);if(hash){const target=encodeURIComponent(activeScene.id)+'/'+encodeURIComponent(id);try{history.replaceState(null,'','#'+target);}catch{location.hash=target;}}}
 function center(id){const n=nodeMap.get(id);if(!n)return;focus=[...n.position];zoom=2;requestDraw();}
@@ -292,19 +349,24 @@ window.addEventListener('hashchange',fromHash);new ResizeObserver(resize).observ
 
 
 function showReading(){
- if(matchMedia('(max-width:860px)').matches){document.body.classList.add('reading-open');setReadingInert(true);}
+ clearReadingInert();
+ if(matchMedia('(max-width:860px)').matches){
+  document.body.classList.add('reading-open');
+  $('help').hidden=true;$('help-toggle').setAttribute('aria-expanded','false');
+  document.querySelector('.reading-header').scrollIntoView({block:'start',behavior:'auto'});
+ }
  $('reading-panel').focus({preventScroll:true});
 }
 function closeReading(){
- document.body.classList.remove('reading-open');setReadingInert(false);
- if(mode==='list')$('list-mode').focus({preventScroll:true});
- else $('scene').focus({preventScroll:true});
+ document.body.classList.remove('reading-open');clearReadingInert();
+ const target=mode==='list'?$('list-mode'):$('scene');
+ if(matchMedia('(max-width:860px)').matches)target.scrollIntoView({block:'start',behavior:'auto'});
+ target.focus({preventScroll:true});
 }
-function setReadingInert(on){
- [document.querySelector('body>header'),document.querySelector('.toolbar'),$('map-area'),$('status')].forEach(x=>x.inert=on);
- if(on){$('help').hidden=true;$('help-toggle').setAttribute('aria-expanded','false');}
+function clearReadingInert(){
+ [document.querySelector('body>header'),document.querySelector('.toolbar'),$('map-area'),$('status')].forEach(x=>x.inert=false);
 }
-matchMedia('(max-width:860px)').addEventListener('change',e=>{if(!e.matches){document.body.classList.remove('reading-open');setReadingInert(false);}});
+matchMedia('(max-width:860px)').addEventListener('change',()=>{document.body.classList.remove('reading-open');clearReadingInert();resize();});
 $('reading-back').addEventListener('click',closeReading);
 $('read-selection').addEventListener('click',showReading);
 document.querySelector('.skip').addEventListener('click',e=>{e.preventDefault();showReading();});
@@ -351,5 +413,33 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('help').hidde
 $('open-window').addEventListener('click',()=>{$('open-window').href='https://mumbrumber101-hub.github.io/ngmmy/'+location.hash;});
 if(new URLSearchParams(location.search).get('view')==='atlas'){const entry=location.hash.slice(1).split('/').pop();openAtlas({entry:decodeURIComponent(entry||'')});}
 
+// Report only the intrinsic mobile height to the known embedding site.
+if(self!==top){
+ const allowedParents=['https://www.arriveateasterwine.com','https://arriveateasterwine.com'];
+ let parentOrigin=allowedParents[0];
+ try{const origin=new URL(document.referrer).origin;if(allowedParents.includes(origin))parentOrigin=origin;}catch{}
+ let heightQueued=false,lastHeightReport='';
+ function reportEmbeddedHeight(){
+  if(heightQueued||!matchMedia('(max-width:860px)').matches)return;
+  heightQueued=true;
+  requestAnimationFrame(()=>{
+   heightQueued=false;
+   if(!matchMedia('(max-width:860px)').matches)return;
+   const contentHeight=Math.ceil(document.body.getBoundingClientRect().height),height=document.documentElement.scrollHeight;
+   const signature=contentHeight+':'+height;
+   if(contentHeight>0&&signature!==lastHeightReport){
+    lastHeightReport=signature;
+    parent.postMessage({type:'aae-atlas-height',height,contentHeight},parentOrigin);
+   }
+  });
+ }
+ new ResizeObserver(reportEmbeddedHeight).observe(document.body);
+ matchMedia('(max-width:860px)').addEventListener('change',()=>{lastHeightReport='';reportEmbeddedHeight();});
+ window.addEventListener('load',reportEmbeddedHeight,{once:true});
+ if(document.fonts)document.fonts.ready.then(reportEmbeddedHeight);
+ reportEmbeddedHeight();
+}
+
 </script></body></html>
+
 
