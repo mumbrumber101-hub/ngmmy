@@ -135,6 +135,12 @@ button[aria-pressed=true]{background:var(--link);color:var(--paper);border-color
 .help,.map-options{border-color:var(--rule);box-shadow:0 8px 28px #20261F24}
 .atlas-dialog,.atlas-bar{background:var(--paper)}
 .atlas-bar h2{font-family:var(--serif)}
+@media(min-width:861px) and (max-width:1100px){
+ .toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:.6rem .8rem}
+ .toolbar .view-switch{margin-left:0}
+ .map-options{grid-column:1/-1;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+ .map-options label{margin-right:auto}
+}
 body.embedded>header{padding:.7rem 1.1rem;gap:1rem}
 body.embedded>header .kicker,body.embedded>header h1{display:none}
 body.embedded #scene-subtitle{display:block;margin:0;color:var(--text);font-size:clamp(1.3rem,2.4vw,1.65rem);line-height:1.15}
