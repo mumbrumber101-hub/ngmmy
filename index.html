@@ -161,6 +161,17 @@ body.embedded .header-actions .window-link{font-size:12px}
  body.embedded .header-actions button{min-width:56px;padding:.45rem .6rem}
  body.embedded .header-actions .window-link{font-size:11px;padding:.2rem;min-height:44px}
 }
+@media(max-width:480px){
+ .toolbar>label{grid-column:1/-1;grid-row:1}
+ #browse{grid-column:1/-1;grid-row:2}
+ .toolbar .view-switch{grid-column:1;grid-row:3}
+ .options-toggle{grid-column:2;grid-row:3}
+}
+@media(max-width:340px){
+ body.embedded>header{flex-wrap:wrap}
+ body.embedded>header>div:first-child{flex-basis:100%}
+ body.embedded .header-tools{margin-left:auto}
+}
 @media print{body{background:white;color:black}.panel{padding:0}.reading-header{display:none!important}}
 </style></head><body><script>if(self!==top)document.body.classList.add("embedded");</script><a class="skip" href="#reading-panel">Skip to selected place</a><header><div><p class="kicker">R. A. Lafferty</p><h1>A Universe of Worlds</h1><p class="subtitle" id="scene-subtitle">Sol and the Centauri suns</p></div><div class="header-tools"><p class="caption" id="scene-caption">The seventeen worlds of Butler’s catalogue in “World Abounding,” with their moons.</p><div class="header-actions"><button id="open-atlas" aria-haspopup="dialog" aria-controls="atlas-dialog">Atlas</button><a class="window-link" id="open-window" href="https://mumbrumber101-hub.github.io/ngmmy/" target="_blank" rel="noopener" aria-label="Open map in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div></div></header>
 <div class="toolbar" aria-label="Map controls"><label>Scene <select id="scene-select"></select></label><button id="browse" aria-expanded="false" aria-controls="browser">Find in this scene</button><div class="view-switch" role="group" aria-label="View"><button id="map-mode" aria-pressed="true">3D map</button><button id="list-mode" aria-pressed="false">List</button></div><button class="options-toggle" id="options-toggle" aria-expanded="false" aria-controls="map-options">Options</button><div class="map-options" id="map-options"><label id="region-label">Region <select id="region"><option value="all">Whole scene</option><option value="sol">Sol</option><option value="proxima">Proxima</option><option value="alpha">Alpha</option><option value="beta">Beta</option></select></label><button id="reset">Reset view</button><button id="help-toggle" aria-expanded="false" aria-controls="help">How to explore</button></div></div>
@@ -396,6 +407,7 @@ function openAtlas(options={}){
  $('atlas-window').href=frame.src||url.href;
  if(!$('atlas-dialog').open)$('atlas-dialog').showModal();
  document.body.classList.add('atlas-open');
+ if(matchMedia('(max-width:860px)').matches)$('close-atlas').scrollIntoView({block:'start',behavior:'auto'});
 }
 $('open-atlas').addEventListener('click',()=>openAtlas());
 $('search-full-atlas').addEventListener('click',()=>openAtlas({search:$('search').value}));
