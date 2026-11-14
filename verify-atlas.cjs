@@ -21,7 +21,7 @@ console.log(vm.runInContext(`(()=>{
 const index=fs.readFileSync(dir+'/index.html','utf8');
 const atlas=fs.readFileSync(dir+'/atlas.html','utf8');
 for(const [name,html] of [['index',index],['atlas',atlas]]){
- assert(html.indexOf('<script src="atlas-data.js?v=20261114"></script>')<html.indexOf('<script>'), name+' data must load before code');
+ assert(html.indexOf('<script src="atlas-data.js?v=20261114b"></script>')<html.indexOf('<script>'), name+' data must load before code');
  new vm.Script(html.match(/<script>([\s\S]*?)<\/script>/)[1]);
 }
 assert(!scripts.includes("querySelector('details')"),'generic details lookup conflicts with related places');

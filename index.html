@@ -7,6 +7,7 @@
 @media print{header,.toolbar,.map-area,.status,footer{display:none}.workspace{display:block;height:auto}.panel{background:white;color:black;border:0;overflow:visible}.panel .tag,.panel figcaption{color:#333}.panel button,.panel-actions{display:none}.panel details{display:block}.panel a{color:black}}
 
 .header-tools{display:flex;align-items:center;gap:1.2rem}.header-tools button{min-width:76px;color:var(--accent);border-color:#89795d}.atlas-open{overflow:hidden}.atlas-dialog{padding:0;margin:0;border:0;inset:0;width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;background:var(--sky);color:var(--ink)}.atlas-dialog[open]{display:flex;flex-direction:column}.atlas-dialog::backdrop{background:#0c141d}.atlas-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--line);flex-shrink:0}.atlas-bar h2{margin:0;font-size:1.15rem;font-weight:400}.atlas-frame{display:block;width:100%;flex:1;min-height:0;border:0;background:#f8f5ef}@media(max-width:720px){.header-tools{margin-top:.85rem;align-items:flex-start}.header-tools .caption{margin:0;max-width:calc(100% - 96px)}.atlas-bar{padding:.6rem .75rem}.atlas-bar h2{font-size:1rem}}
+.external-icon{width:13px;height:13px;vertical-align:-2px;margin-left:3px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 </style><style id="viewport-layout">
 /* Size the application to its own window, including when embedded. */
 html{height:100%;overflow:hidden}
@@ -99,11 +100,11 @@ h1{font-size:clamp(1.65rem,3vw,2.4rem)}
  .panel,.reading-open .panel{display:block;position:static;padding:0;overflow:visible}
  .reading-header,.help,.window-link{display:none!important}
 }
-</style></head><body><a class="skip" href="#reading-panel">Skip to selected place</a><header><div><p class="kicker">R. A. Lafferty</p><h1>A Universe of Worlds</h1><p class="subtitle" id="scene-subtitle">Sol and the Centauri suns</p></div><div class="header-tools"><p class="caption" id="scene-caption">The seventeen worlds of Butler’s catalogue in “World Abounding,” with their moons.</p><div class="header-actions"><button id="open-atlas" aria-haspopup="dialog" aria-controls="atlas-dialog">Atlas</button><a class="window-link" id="open-window" href="https://mumbrumber101-hub.github.io/ngmmy/" target="_blank" rel="noopener" aria-label="Open map in a full browser window">Full window ↗</a></div></div></header>
+</style></head><body><a class="skip" href="#reading-panel">Skip to selected place</a><header><div><p class="kicker">R. A. Lafferty</p><h1>A Universe of Worlds</h1><p class="subtitle" id="scene-subtitle">Sol and the Centauri suns</p></div><div class="header-tools"><p class="caption" id="scene-caption">The seventeen worlds of Butler’s catalogue in “World Abounding,” with their moons.</p><div class="header-actions"><button id="open-atlas" aria-haspopup="dialog" aria-controls="atlas-dialog">Atlas</button><a class="window-link" id="open-window" href="https://mumbrumber101-hub.github.io/ngmmy/" target="_blank" rel="noopener" aria-label="Open map in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div></div></header>
 <div class="toolbar" aria-label="Map controls"><label>Scene <select id="scene-select"></select></label><button id="browse" aria-expanded="false" aria-controls="browser">Find in this scene</button><div class="view-switch" role="group" aria-label="View"><button id="map-mode" aria-pressed="true">3D map</button><button id="list-mode" aria-pressed="false">List</button></div><button class="options-toggle" id="options-toggle" aria-expanded="false" aria-controls="map-options">Options</button><div class="map-options" id="map-options"><label id="region-label">Region <select id="region"><option value="all">Whole scene</option><option value="sol">Sol</option><option value="proxima">Proxima</option><option value="alpha">Alpha</option><option value="beta">Beta</option></select></label><button id="reset">Reset view</button><button id="help-toggle" aria-expanded="false" aria-controls="help">How to explore</button></div></div>
 <section class="help" id="help" hidden aria-label="How to explore"><button class="help-close" id="close-help">Close help</button><p>Drag to turn the scene. Pinch or use the zoom buttons to move closer. Select a world or a connecting line to read its sources. Use Find in this scene or List to choose an entry by name.</p><p>Keyboard: focus the map, then use the arrow keys to turn, + or − to zoom, Home to reset, and [ or ] to move between places. Enter opens the selected place in the reading panel.</p><p>The Scene menu offers five views: Butler’s catalogue, the island-planets of Selkirk, the voyage of Space Chantey, the enclosed worlds, and Aeaea’s shared underground. In the catalogue, lines join each world to its sun and each moon to its world. In the voyage, arrows follow the order of the narrative; the dashed arrow marks the return through reversed time, and the dotted arrow Roadstrum’s disputed report of a last leg by way of Mars. In the enclosed worlds, frames show the model in Barnaby’s study with its city, and the realm inside Toby’s bullet. Sizes and positions are schematic.</p></section>
 <main class="workspace"><div class="reading-header"><button class="reading-back" id="reading-back" aria-controls="reading-panel">← Back to map</button><span>Selected place</span></div><div class="map-area" id="map-area"><canvas id="scene" tabindex="0" role="img" aria-label="Rotatable schematic of Sol and the Centauri suns. Use Find in this scene or List for entries in this scene." aria-describedby="scene-instructions"></canvas><p class="scene-note" id="scene-instructions">Drag to turn. Select a place to read about it.</p><div class="scene-controls" id="scene-controls"><button data-turn="left" aria-label="Turn left">←</button><button data-turn="right" aria-label="Turn right">→</button><button data-turn="up" aria-label="Tilt up">↑</button><button data-turn="down" aria-label="Tilt down">↓</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="read-selection">Read selection</button></div><div class="legend" id="legend"><span><i class="swatch"></i>Sun</span><span><i class="swatch world"></i>Catalogue world</span><span><i class="swatch moon"></i>Moon or pair</span></div><div class="list-view" id="list-view" hidden></div><aside class="browser" id="browser" hidden aria-label="Find in this scene"><button class="close" id="close-browser" aria-label="Close place finder">×</button><label for="search">Find in this scene</label><input id="search" type="search" placeholder="Name or alias" autocomplete="off"><p class="counts" id="find-count"></p><button id="search-full-atlas">Search full atlas</button><ul id="place-list"></ul></aside></div><aside class="panel" id="reading-panel" tabindex="-1" aria-label="Selected place and sources"></aside></main>
-<div class="status" id="status" role="status" aria-live="polite"></div><dialog class="atlas-dialog" id="atlas-dialog" aria-label="Celestial Atlas"><div class="atlas-bar"><button id="close-atlas" autofocus>← Back to map</button><h2>Celestial Atlas</h2><a class="window-link" id="atlas-window" href="https://mumbrumber101-hub.github.io/ngmmy/atlas.html" target="_blank" rel="noopener" aria-label="Open atlas in a full browser window">Full window ↗</a></div><iframe class="atlas-frame" id="atlas-frame" title="Celestial Atlas of R. A. Lafferty" sandbox="allow-scripts"></iframe></dialog><noscript><p class="help">This map requires JavaScript.</p></noscript><script src="atlas-data.js?v=20261114"></script>
+<div class="status" id="status" role="status" aria-live="polite"></div><dialog class="atlas-dialog" id="atlas-dialog" aria-label="Celestial Atlas"><div class="atlas-bar"><button id="close-atlas" autofocus>← Back to map</button><h2>Celestial Atlas</h2><a class="window-link" id="atlas-window" href="https://mumbrumber101-hub.github.io/ngmmy/atlas.html" target="_blank" rel="noopener" aria-label="Open atlas in a full browser window">Full window <svg class="external-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M9 2h5v5M14 2 7 9M6 3H2v11h11v-4"/></svg></a></div><iframe class="atlas-frame" id="atlas-frame" title="Celestial Atlas of R. A. Lafferty" sandbox="allow-scripts"></iframe></dialog><noscript><p class="help">This map requires JavaScript.</p></noscript><script src="atlas-data.js?v=20261114b"></script>
 <script>
 
 
@@ -155,6 +156,31 @@ function fitMap(){
 function resize(){const r=$('map-area').getBoundingClientRect();width=r.width;height=r.height;if(!width||!height)return;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);canvas.style.width=width+'px';canvas.style.height=height+'px';if(ctx)ctx.setTransform(dpr,0,0,dpr,0,0);fitMap();requestDraw();}
 function requestDraw(){if(pending||mode!=='map'||!ctx)return;pending=true;requestAnimationFrame(()=>{pending=false;draw();});}
 function overlaps(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y;}
+// Keep the selected place and visible suns labelled even in a crowded embedding.
+function placeMapLabel(n,textWidth,critical,occupied,obstacles,bounds){
+ const w=Math.min(textWidth+8,bounds.w),h=20;
+ if(w<12||bounds.h<h)return null;
+ const within=b=>b.x>=bounds.x&&b.y>=bounds.y&&b.x+b.w<=bounds.x+bounds.w&&b.y+b.h<=bounds.y+bounds.h;
+ const clearLabels=b=>!occupied.some(x=>overlaps(b,x));
+ const clearNodes=b=>!obstacles.some(x=>overlaps(b,x));
+ const near=[{x:n.x+n.r+12,y:n.y-10},{x:n.x-w-n.r-12,y:n.y-10},{x:n.x-w/2,y:n.y-n.r-28},{x:n.x-w/2,y:n.y+n.r+9}].map(b=>({...b,w,h}));
+ const direct=near.find(b=>within(b)&&clearLabels(b)&&clearNodes(b));
+ if(direct||!critical)return direct||null;
+ // Try the whole drawable area, nearest to the object first. A leader line
+ // retains the association when no adjacent position is available.
+ let clear=null,nearby=null,clearDistance=Infinity,nearbyDistance=Infinity;
+ for(let y=bounds.y;y<=bounds.y+bounds.h-h;y+=4){
+  for(let x=bounds.x;x<=bounds.x+bounds.w-w;x+=8){
+   const distance=(x+w/2-n.x)**2+(y+h/2-n.y)**2;
+   if(distance>=clearDistance&&distance>=nearbyDistance)continue;
+   const b={x,y,w,h,leader:true};if(!clearLabels(b))continue;
+   if(distance<nearbyDistance){nearby=b;nearbyDistance=distance;}
+   if(distance<clearDistance&&clearNodes(b)){clear=b;clearDistance=distance;}
+  }
+ }
+ return clear||nearby||
+  {x:Math.max(bounds.x,Math.min(n.x-w/2,bounds.x+bounds.w-w)),y:Math.max(bounds.y,Math.min(n.y-h/2,bounds.y+bounds.h-h)),w,h,leader:true};
+}
 function drawEnclosures(){
  (activeScene.enclosures||[]).forEach(frame=>{
   const points=Array.from({length:8},(_,i)=>project(frame.center.map((v,k)=>v+(i&(1<<k)?1:-1)*frame.extent[k])));
@@ -181,7 +207,22 @@ function draw(){
  let seed=23;for(let i=0;i<(activeScene.enclosures?0:90);i++){seed=(seed*16807)%2147483647;let x=(seed%10000)/10000*width;seed=(seed*16807)%2147483647;let y=(seed%10000)/10000*height;ctx.fillStyle=i%4?'#52616c55':'#9daab055';ctx.fillRect(x,y,i%4?1:1.5,i%4?1:1.5);}
  projected=visible().map(n=>({...n,...project(n.position)}));const positions=new Map(projected.map(n=>[n.id,n]));
  drawEnclosures();
- edges.forEach(e=>{if(activeScene.kind==='nested')return;const a=positions.get(e.from),b=positions.get(e.to);if(!a||!b)return;const active=e.from===chosen||e.to===chosen;if(activeScene.id==='selkirk'&&!active)return;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=active?'#d7bd88b8':'#708b9b70';ctx.lineWidth=active?1.5:1;ctx.setLineDash(e.kind==='reported_last_leg'?[2,6]:e.kind==='time_reversal'?[7,4]:e.kind==='moon_of'?[3,4]:e.status==='attributed'?[6,5]:[]);ctx.stroke();ctx.setLineDash([]);if(activeScene.kind==='journey'||e.kind==='entrance_to'){const t=e.kind==='time_reversal'?.4:.65,px=a.x+(b.x-a.x)*t,py=a.y+(b.y-a.y)*t,ang=Math.atan2(b.y-a.y,b.x-a.x);ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px-8*Math.cos(ang-.5),py-8*Math.sin(ang-.5));ctx.moveTo(px,py);ctx.lineTo(px-8*Math.cos(ang+.5),py-8*Math.sin(ang+.5));ctx.stroke();}lineHits.push({a,b,edge:e});});
+ edges.forEach(e=>{
+  if(activeScene.kind==='nested')return;
+  const a=positions.get(e.from),b=positions.get(e.to);if(!a||!b)return;
+  const active=e.from===chosen||e.to===chosen,journey=activeScene.kind==='journey';
+  if(activeScene.id==='selkirk'&&!active)return;
+  ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+  ctx.strokeStyle=active?'#d7bd88e6':journey?'#9ab2c3cc':'#708b9b70';
+  ctx.lineWidth=active?1.7:journey?1.4:1;
+  ctx.setLineDash(e.kind==='reported_last_leg'?[2,6]:e.kind==='time_reversal'?[7,4]:e.kind==='moon_of'?[3,4]:e.status==='attributed'?[6,5]:[]);
+  ctx.stroke();ctx.setLineDash([]);
+  if(journey||e.kind==='entrance_to'){
+   const t=e.kind==='time_reversal'?.4:.65,px=a.x+(b.x-a.x)*t,py=a.y+(b.y-a.y)*t,ang=Math.atan2(b.y-a.y,b.x-a.x),size=journey?9:8;
+   ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px-size*Math.cos(ang-.5),py-size*Math.sin(ang-.5));ctx.moveTo(px,py);ctx.lineTo(px-size*Math.cos(ang+.5),py-size*Math.sin(ang+.5));ctx.stroke();
+  }
+  lineHits.push({a,b,edge:e});
+ });
  projected.sort((a,b)=>b.z-a.z).forEach(n=>{
   const r=(n.kind==='sun'?10:n.kind==='world'?5.5:3.5)*Math.min(1.5,Math.max(.85,zoom*.75))*n.f;n.r=r;
   if(n.kind==='sun'){const glow=ctx.createRadialGradient(n.x,n.y,1,n.x,n.y,r*4.5);glow.addColorStop(0,palette[n.group]+'88');glow.addColorStop(1,palette[n.group]+'00');ctx.fillStyle=glow;ctx.beginPath();ctx.arc(n.x,n.y,r*4.5,0,Math.PI*2);ctx.fill();}
@@ -192,9 +233,20 @@ function draw(){
  });
  const priority=[...projected].sort((a,b)=>(b.id===chosen)-(a.id===chosen)||(b.kind==='sun')-(a.kind==='sun')||a.z-b.z);
  const avoid=projected.map(n=>({x:n.x-n.r-5,y:n.y-n.r-5,w:2*n.r+10,h:2*n.r+10}));
- priority.forEach(n=>{if(n.x<0||n.x>width||n.y<0||n.y>height)return;ctx.font=n.kind==='sun'?'16px Georgia':'13px system-ui, sans-serif';const label=(n.order?n.order+'. ':'')+n.name.replace(' · Grian Sun','');const tw=ctx.measureText(label).width;const h=20;const candidates=[{x:n.x+n.r+12,y:n.y-10},{x:n.x-tw-n.r-12,y:n.y-10},{x:n.x-tw/2,y:n.y-n.r-28},{x:n.x-tw/2,y:n.y+n.r+9}];
-  let box=candidates.map(c=>({...c,w:tw+8,h})).find(b=>b.x>8&&b.y>drawTop-12&&b.x+b.w<width-8&&b.y+b.h<drawBottom+12&&!labelBoxes.some(x=>overlaps(b,x))&&!avoid.some(x=>overlaps(b,x)));
-  if(!box)return;labelBoxes.push({...box,id:n.id});ctx.fillStyle='#0c141dcc';ctx.fillRect(box.x-3,box.y,box.w+3,h);ctx.fillStyle=n.id===chosen?'#f2d6a9':n.kind==='sun'?palette[n.group]:'#dae1e5';ctx.fillText(label,box.x,box.y+15);
+ const bounds={x:8,y:Math.max(8,drawTop-12),w:width-16,h:Math.max(20,drawBottom+12-Math.max(8,drawTop-12))};
+ priority.forEach(n=>{
+  if(n.x<0||n.x>width||n.y<0||n.y>height)return;
+  ctx.font=n.kind==='sun'?'16px Georgia':'13px system-ui, sans-serif';
+  const label=(n.order?n.order+'. ':'')+n.name.replace(' · Grian Sun','');
+  const box=placeMapLabel(n,ctx.measureText(label).width,n.id===chosen||n.kind==='sun',labelBoxes,avoid,bounds);
+  if(!box)return;
+  labelBoxes.push({...box,id:n.id});
+  if(box.leader){
+   const x=Math.max(box.x,Math.min(n.x,box.x+box.w)),y=Math.max(box.y,Math.min(n.y,box.y+box.h));
+   ctx.strokeStyle=n.id===chosen?'#d7bd88b8':'#a5b6c199';ctx.lineWidth=.9;ctx.setLineDash([]);ctx.beginPath();ctx.moveTo(n.x,n.y);ctx.lineTo(x,y);ctx.stroke();
+  }
+  ctx.fillStyle='#0c141df0';ctx.fillRect(box.x,box.y,box.w,box.h);
+  ctx.fillStyle=n.id===chosen?'#f2d6a9':n.kind==='sun'?palette[n.group]:'#dae1e5';ctx.fillText(label,box.x+4,box.y+15,box.w-8);
  });
 }
 function panel(id){const x=entries.get(id);if(!x)return;chosen=id;let r=register.relationships.filter(e=>e.from===id||e.to===id);const sceneEdgeIds=new Set(activeScene.renderedRelations);r.sort((a,b)=>Number(sceneEdgeIds.has(b.id))-Number(sceneEdgeIds.has(a.id)));const condensed=id==='selkirk-system';if(condensed)r=r.slice(0,1);const p=$('reading-panel');

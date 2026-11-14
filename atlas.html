@@ -59,10 +59,12 @@
 }
 @media screen and (max-width:360px){#browse-body{grid-template-columns:minmax(0,1fr)}}
 @media screen and (max-height:450px){.masthead{padding:.4rem 1rem}.masthead .eyebrow,.deck{display:none}.masthead h1{font-size:1.65rem}.layout{padding-top:.5rem}}
+.browse-icon::before{content:'+'}.mobile-browse[aria-expanded="true"] .browse-icon::before{content:'−'}
+@media screen and (max-width:600px){.related ul{columns:1}.related li a{display:inline-block;padding:.3rem 0}}
 </style></head><body id="top">
 <a class="skip-link" href="#entries">Skip to entries</a>
 <header class="masthead"><div class="masthead-inner"><p class="eyebrow">R. A. Lafferty</p><h1>Celestial Atlas</h1><p class="deck">Worlds, moons, and other realms in the fiction.</p></div></header>
-<main class="layout"><aside class="sidebar" aria-label="Browse the atlas"><h2>Browse the atlas</h2><button class="mobile-browse" id="browse-toggle" aria-expanded="false" aria-controls="browse-body">Search &amp; browse <span aria-hidden="true">+</span></button><div id="browse-body">
+<main class="layout"><aside class="sidebar" aria-label="Browse the atlas"><h2>Browse the atlas</h2><button class="mobile-browse" id="browse-toggle" aria-expanded="false" aria-controls="browse-body">Search &amp; browse <span class="browse-icon" aria-hidden="true"></span></button><div id="browse-body">
 <label class="filter-field"><span class="label">Search</span><input id="search" type="search" placeholder="Name, place, or passage" autocomplete="off"></label>
 <label class="filter-field"><span class="label">Work</span><select id="story-filter"><option value="all">All works</option></select></label>
 <label class="filter-field"><span class="label">Type</span><select id="type-filter"><option value="all">All types</option><option value="planet">Planets</option><option value="asteroid">Asteroids</option><option value="moon">Moons</option><option value="star">Stars &amp; systems</option><option value="orbital">Orbitals</option><option value="aspect">World aspects</option><option value="group">Groups</option><option value="place">Other places &amp; realms</option><option value="reference">Name references</option></select></label>
@@ -73,7 +75,7 @@
                 <p>The stellar assignments follow Butler’s catalogue in “World Abounding”: one world around Sol, four around Proxima, six around Alpha, and six around Beta. The catalogue admits only habitable worlds within limits of size and distance.</p>
                 <p>Classifications sometimes differ between works. Aranea is both the Spider Planet and the Spider Asteroid; Proavitus is a big asteroid included among the Alpha worlds. Tarshish is an aspect of Klepsis. Some entries cover a group of bodies.</p>
                 <p>Each quotation is given with the title of its work. Where a quotation records a character’s claim, the speaker is named beneath it.</p></details><div id="entries" tabindex="-1"></div><div class="empty" id="empty" hidden><h2>No entries found</h2><p>Try another spelling or clear the filters.</p><button id="empty-reset">Clear filters</button></div><noscript><p class="noscript">This atlas needs JavaScript to display its entries and source quotations.</p></noscript></div></main>
-<footer><span>An annotated atlas of Lafferty’s fiction</span><a href="#top">Back to top</a></footer><script src="atlas-data.js?v=20261114"></script>
+<footer><span>An annotated atlas of Lafferty’s fiction</span><a href="#top">Back to top</a></footer><script src="atlas-data.js?v=20261114b"></script>
 <script>
 const locations = register.entities.filter(x=>!x.catalogueTarget);
 const systems = {
@@ -134,7 +136,7 @@ function card(x){
  node.innerHTML=`<div class="entry-heading"><h3 id="heading-${x.id}"><a href="#${x.id}">${esc(x.name)}</a></h3><a class="permalink" href="#${x.id}" aria-label="Direct link to ${esc(x.name)}">Link</a></div>
  <span class="entry-type">${esc(x.typeLabel||types[x.type])}${x.subsystem?' · '+esc(systems[x.system].subsystems[x.subsystem]):''}</span>
  ${x.altName?`<p class="alias">${esc(x.altName)}</p>`:''}<p class="description">${descriptionHtml(x.description,x.descriptionTitles)}</p>
- ${related.length>8?`<details class="related"><summary>${related.length} related places</summary><ul>${related.map(id=>`<li><a href="#${id}">${esc(byId.get(id).name)}</a></li>`).join('')}</ul></details>`:related.length?`<p class="related">See also: ${related.map(id=>`<a href="#${id}">${esc(byId.get(id).name)}</a>`).join('; ')}.</p>`:''}
+ ${related.length>8?`<details class="related"><summary>${esc(x.relatedLabel||related.length+' related places')}</summary><ul>${related.map(id=>`<li><a href="#${id}">${esc(byId.get(id).name)}</a></li>`).join('')}</ul></details>`:related.length?`<p class="related">See also: ${related.map(id=>`<a href="#${id}">${esc(byId.get(id).name)}</a>`).join('; ')}.</p>`:''}
  <details class="citations"><summary>${x.citations.length} ${x.citations.length===1?'citation':'citations'}<span class="visually-hidden"> for ${esc(x.name)}</span></summary>${x.citations.map(c=>`<figure class="citation"><blockquote>${esc(c.quote)}</blockquote><figcaption>${title(c.story)}${sourceDetails(c)?`<p>${esc(sourceDetails(c))}</p>`:''}${c.speaker?`<p>${esc(c.speaker)}</p>`:''}${c.note?`<p>${esc(c.note)}</p>`:''}</figcaption></figure>`).join('')}</details>`;
  return node;
 }
